@@ -1,0 +1,32 @@
+{
+    "name": "laraish/pagination",
+    "description": "A simple library for generating pagination.",
+    "keywords": [
+        "framework",
+        "laravel",
+        "wordpress"
+    ],
+    "license": "MIT",
+    "homepage": "https://github.com/laraish/pagination",
+    "support": {
+        "issues": "https://github.com/laraish/pagination/issues",
+        "source": "https://github.com/laraish/pagination"
+    },
+    "authors": [
+        {
+            "name": "yaquawa",
+            "email": "yaquawa@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.6.4",
+        "laraish/contracts": "0.1.*",
+        "laraish/support": "0.1.*",
+        "illuminate/contracts": "5.3.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Laraish\\Pagination\\": "./"
+        }
+    }
+}
