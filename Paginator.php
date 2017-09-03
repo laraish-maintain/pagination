@@ -215,7 +215,7 @@ class Paginator implements PaginatorContracts, Htmlable
     protected function setupBaseUrl()
     {
         $scheme = static::isHttps() ? 'https://' : 'http://';
-        $host   = $_SERVER['SERVER_NAME'];
+        $host   = $_SERVER['HTTP_HOST'];
         $path   = $this->path;
 
         $this->baseUrl = $scheme . $host . $path;
@@ -253,7 +253,7 @@ class Paginator implements PaginatorContracts, Htmlable
         $suffix  = $this->suffix;
 
         if ($pageNumber === 1) {
-            return $this->baseUrl . $this->suffix;
+            return $this->baseUrl . $suffix;
         }
 
         if ($this->urlStyle == 'pretty') {
