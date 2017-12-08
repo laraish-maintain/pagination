@@ -91,6 +91,12 @@ class Paginator implements PaginatorContracts, Htmlable
     protected $path;
 
     /**
+     * The hostname.
+     * @var string
+     */
+    protected $hostname;
+
+    /**
      * The normalised base path.
      * @var string
      */
@@ -162,7 +168,7 @@ class Paginator implements PaginatorContracts, Htmlable
      */
     public function __construct($total, $perPage, $currentPage = null, array $options = [])
     {
-        $this->convertMapToProperties($options, ['onEachSide', 'type', 'view', 'urlStyle', 'nextPageText', 'prevPageText', 'path', 'suffix']);
+        $this->convertMapToProperties($options, ['onEachSide', 'type', 'view', 'urlStyle', 'nextPageText', 'prevPageText', 'path', 'suffix', 'hostname']);
         $this->sanitizeOptions();
         $this->setupTemplateEngine();
         $this->setupBaseUrl();
@@ -190,6 +196,9 @@ class Paginator implements PaginatorContracts, Htmlable
             $this->view = __DIR__ . '/resources/views/' . $this->type . '.php';
         }
 
+        // set the hostname. If no hostname given, get it from current hostname.
+        $this->hostname = $this->hostname ? trim($this->hostname) : $_SERVER['HTTP_HOST'];
+
         // set the base path. if no path given, get the path from current uri.
         $this->path = $this->path ? '/' . trim($this->path, '/') : rtrim(preg_replace('@/page/\d+.*@', '', (parse_url($_SERVER['REQUEST_URI']))['path']), '/');
 
@@ -215,10 +224,8 @@ class Paginator implements PaginatorContracts, Htmlable
     protected function setupBaseUrl()
     {
         $scheme = static::isHttps() ? 'https://' : 'http://';
-        $host   = $_SERVER['HTTP_HOST'];
-        $path   = $this->path;
 
-        $this->baseUrl = $scheme . $host . $path;
+        $this->baseUrl = $scheme . $this->hostname . $this->path;
     }
 
     /**
