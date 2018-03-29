@@ -533,7 +533,7 @@ class Paginator implements PaginatorContracts, Htmlable
 
     public function toHtml()
     {
-        if ($this->lastPage() === 1) {
+        if ($this->lastPage() <= 1) {
             return '';
         }
 
