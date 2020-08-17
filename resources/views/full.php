@@ -1,5 +1,7 @@
 <div class="pagination">
-    <?php // Previous Page Link ?>
+    <?php
+// Previous Page Link
+?>
     <div class="pagination__prev-button<?php echo $paginator->onFirstPage() ? ' disabled' : ''; ?>">
         <?php if ($paginator->onFirstPage()): ?>
             <span><?php echo $paginator->prevPageText(); ?></span>
@@ -18,7 +20,9 @@
         <?php endforeach; ?>
     </ul>
 
-    <?php // Next Page Link ?>
+    <?php
+// Next Page Link
+?>
     <div class="pagination__next-button<?php echo $paginator->hasMorePages() ? '' : ' disabled'; ?>">
         <?php if ($paginator->hasMorePages()): ?>
             <a href="<?php echo $paginator->nextPageUrl(); ?>"><span><?php echo $paginator->nextPageText(); ?></span></a>
