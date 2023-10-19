@@ -1,5 +1,5 @@
 {
-    "name": "laraish/pagination",
+    "name": "laraish-maintain/pagination",
     "description": "A simple library for generating pagination, updated fork.",
     "keywords": [
         "framework",
@@ -7,21 +7,21 @@
         "wordpress"
     ],
     "license": "MIT",
-    "homepage": "https://github.com/thanasisxan/laraish-pagination",
+    "homepage": "https://github.com/laraish-maintain/pagination",
     "support": {
-        "issues": "https://github.com/thanasisxan/laraish-pagination/issues",
-        "source": "https://github.com/thanasisxan/laraish-pagination"
+        "issues": "https://github.com/laraish-maintain/pagination/issues",
+        "source": "https://github.com/laraish-maintain/pagination"
     },
     "authors": [
         {
-            "name": "yaquawa",
-            "email": "yaquawa@gmail.com"
+            "name": "thanasisxan",
+            "email": "thanasis.xanthop@gmail.com"
         }
     ],
     "require": {
         "php": "^8.0",
-        "laraish/contracts": "^3.0",
-        "laraish/support": "^3.0",
+        "laraish-maintain/contracts": "^3.1",
+        "laraish-maintain/support": "^3.1",
         "illuminate/contracts": "^9.0"
     },
     "autoload": {
@@ -31,15 +31,5 @@
     },
     "scripts": {
         "fix-cs": ["prettier **/*.php --write"]
-    },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/thanasisxan/laraish-contracts"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/thanasisxan/laraish-support"
-        }
-    ]
+    }
 }
